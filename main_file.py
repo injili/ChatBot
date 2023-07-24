@@ -38,6 +38,8 @@ def check_messages(message):
 
     def response(bot_response, list_of_words, single_response=False,
                  required_words=[]):
+        """
+        """
         nonlocal highest_brobability_list
         var = message_probability(message, list_of_words, single_response,
                                   required_words)
@@ -48,3 +50,15 @@ def check_messages(message):
         """
 
         best match = max(highest_probability_list, key=highest_probability_list.get)
+
+        return long.unknown() if highest_probability_list[best_match] < 1 else best_match
+
+def get_response(user_input):
+    """
+    """
+    split_message = re.split(r'\s+|[,;?!.-]\s*', user_input.lower())
+    response = check_all_messages(split_message)
+    return response
+
+while True:
+    print('Bot: ' + get_response(input('You: ')))
