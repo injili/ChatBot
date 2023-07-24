@@ -36,6 +36,9 @@ def check_messages(message):
     """
     highest_probability_list = {}
 
+    with open('responses.json') as f:
+        responses_data = json.load(f)
+
     def response(bot_response, list_of_words, single_response=False,
                  required_words=[]):
         """
@@ -45,9 +48,8 @@ def check_messages(message):
                                   required_words)
         highest_probability_list[bot_response] = var
 
-        """
-        Responses and more
-        """
+        for response_key, response_data in responses_data.items():
+            response(response_data['responses'], response_data['patterns'], single_response=True)
 
         best match = max(highest_probability_list, key=highest_probability_list.get)
 
