@@ -4,7 +4,7 @@ module main_file
 """
 
 import re
-import the_responses as resp
+import the_responses as long
 
 
 def message_probability(user_message, recognised_words,
@@ -57,7 +57,7 @@ def get_response(user_input):
     """
     """
     split_message = re.split(r'\s+|[,;?!.-]\s*', user_input.lower())
-    response = check_all_messages(split_message)
+    response = check_messages(split_message)
     return response
 
 while True:
