@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 module main_file
+A vanilla python script to interract with a user in form of a chat
 """
 
 import re
@@ -11,6 +12,12 @@ import other_responses as long
 def message_probability(user_message, recognised_words,
                         single_response=False, required_words=[]):
     """
+    calculate the message probability and return the percentage
+    Args:
+        user_message(str): The message typed by the user
+        recognised_words(list of str): The keywords to be sought in the message
+        single_response(bool): If True, bypasses the required_words check
+        required_words(str list): Words that have to be in the message
     """
     message_certainty = 0
     req_words = True
@@ -34,6 +41,9 @@ def message_probability(user_message, recognised_words,
 
 def check_messages(message):
     """
+    Does the check on the message tofind the most suitable response
+    Args:
+        message(str): The message by the user
     """
     highest_probability_list = {}
 
@@ -44,6 +54,13 @@ def check_messages(message):
     def response(bot_response, list_of_words, single_response=False,
                  required_words=[]):
         """
+        A function to calculate and store the message probability for a response
+        Args:
+            bot_response(str): A response from the json file.
+            list_of_words(list of str): A list of keywords to match the response
+            single_response(bool): Determines whether only one word is needed for the match
+            required_words(list of str): Words that must be present in the message if the
+                response isn't a single_response category
         """
         nonlocal highest_probability_list
         var = message_probability(message, list_of_words, single_response,
@@ -66,6 +83,9 @@ def check_messages(message):
 
 def get_response(user_input):
     """
+    Fetches the response and passes it back
+    Args:
+        user_input(str): The query typed in by the user
     """
     split_message = re.split(r'\s+|[,;?!.-]\s*', user_input.lower())
     response = check_messages(split_message)
