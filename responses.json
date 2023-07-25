@@ -2,12 +2,39 @@
   "responses": [
     {
       "response": "Hello!",
-      "keywords": ["hello", "hi", "hey", "sup", "yoo"],
-      "single_response": True
+      "keywords": ["hello", "hi", "hey", "sup", "heyo"],
+      "single_response": true
     },
     {
       "response": "See you!",
       "keywords": ["bye", "goodbye"],
-      "single_response": True
+      "single_response": true
+    },
+    {
+      "response": "I'm doing fine, and you?",
+      "keywords": ["how", "are", "you", "doing"],
+      "required_words": ["how"]
+    },
+    {
+      "response": "You're welcome!",
+      "keywords": ["thank", "thanks"],
+      "single_response": true
+    },
+    {
+      "response": "Thank you!",
+      "keywords": ["i", "love", "code", "palace"],
+      "required_words": ["code", "palace"]
+    },
+    {
+      "response": "Long advice response goes here...",
+      "keywords": ["give", "advice"],
+      "required_words": ["advice"]
+    },
+    {
+      "response": "Long eating response goes here...",
+      "keywords": ["what", "you", "eat"],
+      "required_words": ["you", "eat"]
     }
+  ]
 }
+
