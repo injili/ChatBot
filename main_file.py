@@ -76,7 +76,7 @@ while True:
     out_words = ['bye', 'exit']
     text = input('You: ')
     if text in out_words:
-        print('Bot: Farewell! Have an amazing day!')
+        print("Bot: " + long.exit_words())
         break
     else:
         print('Bot: ' + get_response(text))
