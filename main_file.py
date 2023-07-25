@@ -5,7 +5,7 @@ module main_file
 
 import re
 import json
-import the_responses as long
+import other_responses as long
 
 
 def message_probability(user_message, recognised_words,
