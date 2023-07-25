@@ -1,4 +1,5 @@
 # Python ChatBot - An Interactive Chatbot Application
+![Hello there](photo.jpg)
 This Python project is an interactive chatbot that engages in a conversation with the user. The chatbot uses a simple rule-based approach to generate responses based on pre-defined keywords and responses stored in a JSON file. The chatbot provides replies based on the keywords found in the user's input and calculates the probability of suitable responses.
 
 ## Features:
