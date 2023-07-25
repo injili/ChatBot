@@ -73,4 +73,10 @@ def get_response(user_input):
 
 
 while True:
-    print('Bot: ' + get_response(input('You: ')))
+    out_words = ['bye', 'exit']
+    text = input('You: ')
+    if text in out_words:
+        print('Bot: Farewell! Have an amazing day!')
+        break
+    else:
+        print('Bot: ' + get_response(text))
