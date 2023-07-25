@@ -1,40 +1,81 @@
 {
   "responses": [
     {
-      "response": "Hello!",
-      "keywords": ["hello", "hi", "hey", "sup", "heyo"],
-      "single_response": true
-    },
-    {
       "response": "See you!",
-      "keywords": ["bye", "goodbye"],
+      "keywords": [
+        "bye",
+        "goodbye"
+      ],
       "single_response": true
     },
     {
       "response": "I'm doing fine, and you?",
-      "keywords": ["how", "are", "you", "doing"],
-      "required_words": ["how"]
+      "keywords": [
+        "how",
+        "are",
+        "you",
+        "doing"
+      ],
+      "required_words": [
+        "how"
+      ]
     },
     {
       "response": "You're welcome!",
-      "keywords": ["thank", "thanks"],
+      "keywords": [
+        "thank",
+        "thanks"
+      ],
       "single_response": true
     },
     {
       "response": "Thank you!",
-      "keywords": ["i", "love", "code", "palace"],
-      "required_words": ["code", "palace"]
+      "keywords": [
+        "i",
+        "love",
+        "code",
+        "palace"
+      ],
+      "required_words": [
+        "code",
+        "palace"
+      ]
     },
     {
       "response": "Long advice response goes here...",
-      "keywords": ["give", "advice"],
-      "required_words": ["advice"]
+      "keywords": [
+        "give",
+        "advice"
+      ],
+      "required_words": [
+        "advice"
+      ]
     },
     {
       "response": "Long eating response goes here...",
-      "keywords": ["what", "you", "eat"],
-      "required_words": ["you", "eat"]
+      "keywords": [
+        "what",
+        "you",
+        "eat"
+      ],
+      "required_words": [
+        "you",
+        "eat"
+      ]
+    },
+    {
+      "response": "Hello! How may I help you today?",
+      "keywords": [
+        "hello",
+        "hi",
+        "hey",
+        "sup",
+        "yoo"
+      ],
+      "single_response": true,
+      "required_words": [
+        ""
+      ]
     }
   ]
 }
-
