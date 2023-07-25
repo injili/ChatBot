@@ -1,10 +1,13 @@
 {
-  "hello_responses": {
-    "patterns": ["hello", "hi", "hey", "sup", "yoo"],
-    "responses": ["Hello!", "Hi there!", "Hey!", "Hey, how can I help you?"]
+  "responses": [
+    {
+      "response": "Hello!",
+      "keywords": ["hello", "hi", "hey", "sup", "yoo"],
+      "single_response": True
     },
-  "goodbye_responses": {
-    "patterns": ["bye", "goodbye"],
-    "responses": ["See you!", "Bye <3", "Take care!"]
+    {
+      "response": "See you!",
+      "keywords": ["bye", "goodbye"],
+      "single_response": True
     }
 }

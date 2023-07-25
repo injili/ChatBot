@@ -44,17 +44,18 @@ def check_messages(message):
                  required_words=[]):
         """
         """
-        nonlocal highest_brobability_list
+        nonlocal highest_probability_list
         var = message_probability(message, list_of_words, single_response,
                                   required_words)
         highest_probability_list[bot_response] = var
 
-        for response_key, response_data in responses_data.items():
-            response(response_data['responses'], response_data['patterns'], single_response=True)
+    for response_key, response_data in responses_data['responses']:
+        response(response_data['response'], response_data['keywords'],
+                 response_data.get('single_response', False),
+                 response_data.get('required_words', []))
 
-        best match = max(highest_probability_list, key=highest_probability_list.get)
-
-        return long.unknown() if highest_probability_list[best_match] < 1 else best_match
+    best_match = max(highest_probability_list, key=highest_probability_list.get)
+    return long.unknown() if highest_probability_list[best_match] < 1 else best_match
 
 def get_response(user_input):
     """
