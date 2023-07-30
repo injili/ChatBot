@@ -134,6 +134,19 @@
         "course",
         "evaluation"
       ]
+    },
+    {
+      "response": "My name is yourbot",
+      "keywords": [
+        "what",
+        "is",
+        "your",
+        "name"
+      ],
+      "single_response": true,
+      "required_words": [
+        ""
+      ]
     }
   ]
 }
