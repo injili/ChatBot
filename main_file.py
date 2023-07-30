@@ -4,9 +4,12 @@ module main_file
 A vanilla python script to interract with a user in form of a chat
 """
 
+from flask import Flask, jsonify, request, render_template
 import re
 import json
 import other_responses as long
+
+app = Flask(__name__)
 
 
 def message_probability(user_message, recognised_words,
@@ -91,12 +94,14 @@ def get_response(user_input):
     response = check_messages(split_message)
     return response
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-while True:
-    out_words = ['bye', 'exit']
-    text = input('You: ')
-    if text in out_words:
-        print("Bot: " + long.exit_words())
-        break
-    else:
-        print('Bot: ' + get_response(text))
+@app.route('/get_chatbot_response', methods=['POST'])
+def get_chatbot_response():
+    user_input = request.form['user_input']
+    return jsonify({'bot_response': get_response(user_input)})
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=5000)
