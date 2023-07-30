@@ -23,4 +23,7 @@ To customize the chatbot's behavior, you can modify the responses.json file. It 
 
 
 
-Note: This chatbot uses a simple rule-based approach and may not have sophisticated natural language understanding capabilities. It serves as a starting point for building more complex conversational AI applications.
+==Note==: This chatbot uses a simple rule-based approach and may not have sophisticated natural language understanding capabilities. It serves as a starting point for building more complex conversational AI applications.
+
+## Author
+injili (nyarekigospel@gmail.com)
