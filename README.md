@@ -15,6 +15,7 @@ First, start the virtual environment with the command ```source venv/bin/activat
 Run the [main_file.py](main_file.py) script to start the bot with the command ```python main_file.py```.  
 Next go to your browser and type in the address http://127.0.0.1:5000  
 Click the 'open chatbot' button and type your message  
+![frontend](front.png)
 The chatbot will process your input and provide appropriate responses.  
 The administrator would have to run the write_responses.py file so they can modify the responses. The command is ```./write_responses.py```.
 ![operation](screenshot.png)
