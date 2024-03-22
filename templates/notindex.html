@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chatbot</title>
+    <link href="{{url_for('static',filename='css/main.css')}}" rel="stylesheet">
+    <style>
+        /* Style for the chatbot pop-up */
+        #chat-popup {
+            bottom: 20px;
+            right: 20px;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            padding: 10px;
+            max-width: 300px;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Chatbot pop-up container -->
+    <div id="chat-popup">
+        <h1>Chatbot</h1>
+        <div id="chat-box">
+            <div class="user-message">You: <input type="text" id="user-input"></div>
+            <div class="bot-message">Bot: <span id="bot-response"></span></div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the chatbot pop-up
+        function toggleChatPopup() {
+            var chatPopup = document.getElementById('chat-popup');
+            chatPopup.style.display = chatPopup.style.display === 'none' ? 'block' : 'none';
+        }
+
+        document.getElementById('user-input').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                sendUserMessage();
+            }
+        });
+
+        function sendUserMessage() {
+            let userMessage = document.getElementById('user-input').value.trim();
+            if (userMessage === '') {
+                return;
+            }
+            document.getElementById('user-input').value = '';
+            document.getElementById('bot-response').textContent = 'Waiting for response...';
+            fetch('http://127.0.0.1:5000/get_chatbot_response', {
+                method: 'POST',
+                body: new URLSearchParams({ 'user_input': userMessage }),
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('bot-response').textContent = data.bot_response;
+            });
+        }
+    </script>
+  </body>
+</html>
+

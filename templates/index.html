@@ -1,98 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Chatbot</title>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover">
+    <title>Homepage - Cyafe</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static',filename='images/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static',filename='images/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static',filename='images/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{url_for('static',filename='images/site.webmanifest')}}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--Tailwind ting-->
     <link href="{{url_for('static',filename='css/main.css')}}" rel="stylesheet">
-    <style>
-        /* Style for the chatbot pop-up */
-        #chat-popup {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            border: 1px solid #ccc;
-            background-color: #f1f1f1;
-            padding: 10px;
-            max-width: 300px;
-        }
-    </style>
-  </head>
-  <body>
-    <!-- Button to open the chatbot pop-up -->
-    <button onclick="toggleChatPopup()">Open Chat</button>
 
-    <!-- Chatbot pop-up container -->
-    <div id="chat-popup">
-        <h1>Chatbot</h1>
-        <div id="chat-box">
-            <div class="user-message">You: <input type="text" id="user-input"></div>
-            <div class="bot-message">Bot: <span id="bot-response"></span></div>
+</head>
+<body class="m-2">
+    <header>
+        <div class="flex justify-center">
+            <!--Header section-->
+            <nav class="text-center font-extrabold text-7xl p-4">
+                <h1>cyafe</h1>
+            </nav>
         </div>
-    </div>
-
-    <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
-        <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">Testimonials</h1>
-        <div class="flex flex-wrap -m-4">
-          <div class="p-4 md:w-1/2 w-full">
-            <div class="h-full bg-gray-100 p-8 rounded">
-              <p class="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.</p>
-              <a class="inline-flex items-center">
-                <img alt="testimonial" src="https://dummyimage.com/106x106" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
-                <span class="flex-grow flex flex-col pl-4">
-                  <span class="title-font font-medium text-gray-900">Holden Caulfield</span>
-                  <span class="text-gray-500 text-sm">UI DEVELOPER</span>
+    </header>
+    <main class="p-4">
+        <!--Description Section-->
+        <section>
+            <div class="px-4 pb-4 mb-4">
+                <span class="flex justify-center text-center">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Curabitur posuere euismod neque a rutrum. Duis pretium,
+                        ex et ullamcorper facilisis, arcu dui egestas dolor, in
+                        rhoncus enim mauris id libero. Cectetur adipiscing elit.
+                        Curabitur posuere euismod neque a rutrum. Duis pretium,
+                        ex et ullamcorper facilisis, arcu dui egestas dolor, in
+                        rhoncus enim mauris id libero. A rutrum. Duis pretium,
+                        ex et ullamcorper facilisis, arcu dui egestas dolor, in
+                        rhoncus enim mauris id libero.
+                    </p>
                 </span>
-              </a>
             </div>
-          </div>
-          <div class="p-4 md:w-1/2 w-full">
-            <div class="h-full bg-gray-100 p-8 rounded">
-              <p class="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.</p>
-              <a class="inline-flex items-center">
-                <img alt="testimonial" src="https://dummyimage.com/107x107" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
-                <span class="flex-grow flex flex-col pl-4">
-                  <span class="title-font font-medium text-gray-900">Alper Kamu</span>
-                  <span class="text-gray-500 text-sm">DESIGNER</span>
-                </span>
-              </a>
+        </section>
+
+        <!--Chat Area-->
+        <section>
+            <div class="flex flex-col flex-shrink-0 rounded-2xl bg-gray-100 h-full py-2 2xl:p-4 xl:p-4 lg:p-4">
+                <div class="flex flex-col h-full overflow-x-auto">
+                    <div class="flex flex-col h-full">
+                      <div class="grid grid-cols-12 gap-y-2">
+                            <!--Bot's text-->
+                            <div class="col-start-1 col-end-10 p-2 rounded-lg">
+                                <div class="flex flex-row items-start">
+                                    <img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/bot.jpg')}}" alt="">
+                                    <p class="relative min-h-10 ml-2 text-sm bg-white py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Curabitur posuere euismod neque a rutrum.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!--User's text-->
+                            <div class="col-start-4 col-end-13 p-2 rounded-lg">
+                                <div class="flex items-start justify-start flex-row-reverse">
+                                    <img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/user.jpg')}}" alt="">
+                                    <p class="relative min-h-10 mr-2 text-sm bg-indigo-100 py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Curabitur posuere euismod neque a rutrum.
+                                    </p>
+                                </div>
+                            </div>
+                            <!--Bot's text-->
+                            <div class="col-start-1 col-end-10 p-2 rounded-lg">
+                                <div class="flex flex-row items-start">
+                                    <img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/bot.jpg')}}" alt="">
+                                    <p class="relative min-h-10 ml-2 text-sm bg-white py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Curabitur posuere euismod neque a rutrum.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!--User's text-->
+                            <div class="col-start-4 col-end-13 p-2 rounded-lg">
+                                <div class="flex items-start justify-start flex-row-reverse">
+                                    <img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/user.jpg')}}" alt="">
+                                    <p class="relative min-h-10 mr-2 text-sm bg-indigo-100 py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Curabitur posuere euismod neque a rutrum.
+                                    </p>
+                                </div>
+                            </div>
+                            <!--Bot's text-->
+                            <div class="col-start-1 col-end-10 p-2 rounded-lg">
+                                <div class="flex flex-row items-start">
+                                    <img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/bot.jpg')}}" alt="">
+                                    <p class="relative min-h-10 ml-2 text-sm bg-white py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Curabitur posuere euismod neque a rutrum.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!--User's text-->
+                            <div class="col-start-4 col-end-13 p-2 rounded-lg">
+                                <div class="flex items-start justify-start flex-row-reverse">
+                                    <img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/user.jpg')}}" alt="">
+                                    <p class="relative min-h-10 mr-2 text-sm bg-indigo-100 py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Curabitur posuere euismod neque a rutrum.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="flex h-full py-2">
+                <input
+                    type="text"
+                    id="UserEmail"
+                    placeholder="Write your question here..."
+                    class="p-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <button class="ml-2">Send</button>
+            </div>
+        </section>
+    </main>
+    <footer>
 
-    <script>
-        // Function to toggle the chatbot pop-up
-        function toggleChatPopup() {
-            var chatPopup = document.getElementById('chat-popup');
-            chatPopup.style.display = chatPopup.style.display === 'none' ? 'block' : 'none';
-        }
-
-        document.getElementById('user-input').addEventListener('keyup', function(event) {
-            if (event.key === 'Enter') {
-                sendUserMessage();
-            }
-        });
-
-        function sendUserMessage() {
-            let userMessage = document.getElementById('user-input').value.trim();
-            if (userMessage === '') {
-                return;
-            }
-            document.getElementById('user-input').value = '';
-            document.getElementById('bot-response').textContent = 'Waiting for response...';
-            fetch('http://127.0.0.1:5000/get_chatbot_response', {
-                method: 'POST',
-                body: new URLSearchParams({ 'user_input': userMessage }),
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('bot-response').textContent = data.bot_response;
-            });
-        }
-    </script>
-  </body>
+    </footer>
+    
+</body>
 </html>
-
