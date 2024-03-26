@@ -51,70 +51,21 @@
             <div class="border min-h-96 border-teal-600 flex-col flex-shrink-0 rounded-2xl bg-zinc-100 py-2 2xl:p-4 xl:p-4 lg:p-4">
                 <div class="flex flex-col h-full overflow-x-auto">
                     <div class="flex flex-col h-full">
-                      <div class="grid grid-cols-12 gap-y-2">
+                      <div id="chatbox" class="grid grid-cols-12 gap-y-2">
                             <!--Bot's text-->
                             <div class="col-start-1 col-end-10 p-2 rounded-lg">
                                 <div class="flex flex-row items-start">
                                     <img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/bot.jpg')}}" alt="">
                                     <p class="relative min-h-10 ml-2 text-sm bg-white py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Curabitur posuere euismod neque a rutrum.
+                                        Sup
                                     </p>
                                 </div>
                             </div>
 
                             <!--User's text-->
-                            <div class="col-start-4 col-end-13 p-2 rounded-lg">
-                                <div class="flex items-start justify-start flex-row-reverse">
-                                    <img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/user.jpg')}}" alt="">
-                                    <p class="relative min-h-10 mr-2 text-white text-sm bg-teal-600 py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Curabitur posuere euismod neque a rutrum.
-                                    </p>
-                                </div>
-                            </div>
-                            <!--Bot's text-->
-                            <div class="col-start-1 col-end-10 p-2 rounded-lg">
-                                <div class="flex flex-row items-start">
-                                    <img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/bot.jpg')}}" alt="">
-                                    <p class="relative min-h-10 ml-2 text-sm bg-white py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Curabitur posuere euismod neque a rutrum.
-                                    </p>
-                                </div>
-                            </div>
+                            <div id="userInput">
 
-                            <!--User's text-->
-                            <div class="col-start-4 col-end-13 p-2 rounded-lg">
-                                <div class="flex items-start justify-start flex-row-reverse">
-                                    <img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/user.jpg')}}" alt="">
-                                    <p class="relative min-h-10 mr-2 text-white text-sm bg-teal-600 py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Curabitur posuere euismod neque a rutrum.
-                                    </p>
-                                </div>
-                            </div>
-                            <!--Bot's text-->
-                            <div class="col-start-1 col-end-10 p-2 rounded-lg">
-                                <div class="flex flex-row items-start">
-                                    <img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/bot.jpg')}}" alt="">
-                                    <p class="relative min-h-10 ml-2 text-sm bg-white py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Curabitur posuere euismod neque a rutrum.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!--User's text-->
-                            <div class="col-start-4 col-end-13 p-2 rounded-lg">
-                                <div class="flex items-start justify-start flex-row-reverse">
-                                    <img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/user.jpg')}}" alt="">
-                                    <p class="relative min-h-10 mr-2 text-white text-sm bg-teal-600 py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Curabitur posuere euismod neque a rutrum.
-                                    </p>
-                                </div>
-                            </div>
+                            </div>   
                         </div>
                     </div>
                 </div>
@@ -122,10 +73,10 @@
             <div class="flex h-full py-2 2xl:py-4 xl:py-4 lg:py-4">
                 <input
                     type="text"
-                    id="UserEmail"
+                    id="textInput"
                     placeholder="Write your question here..."
                     class="p-2 bg-gray-50 border border-teal-600 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                <button class="flex items-center ml-2 2xl:ml-4 xl:ml-4 lg:ml-4  bg-teal-600 text-white rounded-lg px-4">
+                <button id="send" class="flex items-center ml-2 2xl:ml-4 xl:ml-4 lg:ml-4  bg-teal-600 text-white rounded-lg px-4">
                     <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                         <path fill-rule="evenodd" d="M12 2a1 1 0 0 1 .932.638l7 18a1 1 0 0 1-1.326 1.281L13 19.517V13a1 1 0 1 0-2 0v6.517l-5.606 2.402a1 1 0 0 1-1.326-1.281l7-18A1 1 0 0 1 12 2Z" clip-rule="evenodd"/>
                     </svg>                      
@@ -144,10 +95,50 @@
             </a>
         </div>
         <p>
-            <Span class="text-xl">© 2024 cyafe</Span>, made with ♥ by injili, cheru, lenda and kai at Kabarak University.
+            <Span class="text-xl">© 2024 cyafe</Span> | made with ♥ by injili, cheru, lenda and kai at Kabarak University.
         </p>
         
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function getBotResponse() {
+            let rawText = $("#textInput").val();
+            let userHtml = '<div class="col-start-4 col-end-13 p-2 rounded-lg">' +
+                            '<div class="flex items-start justify-start flex-row-reverse">' +
+                            `<img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/user.jpg')}}" alt="">` +
+                            '<p class="relative min-h-10 mr-2 text-white text-sm bg-teal-600 py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">'
+                             + rawText + 
+                            '</p></div></div>';
+            $("#textInput").val("");
+            $("#chatbox").append(userHtml);
+            document
+                .getElementById("userInput")
+                .scrollIntoView({ block: "start", behavior: "smooth" });
+            $.get("/get", { msg: rawText }).done(function (data) {
+                var botHtml = '<div class="col-start-1 col-end-10 p-2 rounded-lg">' +
+                                '<div class="flex flex-row items-start">' +
+                                    `<img class="flex h-10 w-10 rounded-full flex-shrink-0" src="{{url_for('static',filename='images/bot.jpg')}}" alt="">` +
+                                    '<p class="relative min-h-10 ml-2 text-sm bg-white py-2 px-2 2xl:px-4 xl:px-4 lg:px-4 shadow rounded-xl">'
+                                         + data + 
+                                    '</p></div></div>';
+                $("#chatbox").append(botHtml);
+                document
+                    .getElementById("userInput")
+                    .scrollIntoView({ block: "start", behavior: "smooth" });
+            });
+        }
+
+        document.getElementById("send").addEventListener("click", handleButtonClick);
+        function handleButtonClick() {
+            getBotResponse();
+        }
+
+        $("#textInput").keypress(function (e) {
+            if (e.which == 13) {
+                getBotResponse();
+            }
+        });
+    </script>
     
 </body>
 </html>

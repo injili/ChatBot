@@ -6,6 +6,7 @@ importlib-metadata
 itsdangerous
 Jinja2
 MarkupSafe
+openai
 packaging
 Werkzeug
 zipp
