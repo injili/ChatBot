@@ -6,10 +6,7 @@ A vanilla python script to interract with a user in form of a chat
 
 from flask import Flask, jsonify, request, render_template
 from openai import OpenAI
-import re
 import os
-import json
-import other_responses as long
 
 client = OpenAI(api_key=os.environ['API_KEY'])
 app = Flask(__name__)

@@ -1,30 +1,33 @@
-# Python ChatBot - An Interactive Chatbot Application
+# CYAFE
+
 ![Hello there](photo.png)
-This Python project is an interactive chatbot that engages in a conversation with the user. The chatbot uses a simple rule-based approach to generate responses based on pre-defined keywords and responses stored in a JSON file. The chatbot provides replies based on the keywords found in the user's input and calculates the probability of suitable responses.
+The digital landscape presents both opportunities and challenges. While technology empowers individuals and organizations, it also creates avenues for cyber threats and exploitation. Kenya, like many countries, faces a rising tide of cybercrime, including social engineering tactics used to facilitate gender-based violence (GBV). Traditional cybersecurity awareness methods often fail to reach the most vulnerable populations, particularly those in rural areas with limited internet access.
+
+Cyafe is an innovative project designed to address this critical gap. We propose the development of an offline-first SMS chatbot, a readily accessible and culturally sensitive solution. This chatbot will deliver essential cybersecurity knowledge directly to individuals in their preferred language, leveraging the ubiquitous reach of SMS messaging while also available to online users.
+
+Cyafe operates via both SMS interactions and an online web app. Users can initiate a conversation, ask questions, and receive information on various cybersecurity topics. The chatbot utilizes pre-programmed responses and branching dialogues to cater to diverse user needs. By providing accessible and localized information, Cyafe empowers individuals to protect themselves online, identify social engineering tactics, and will also evolve to provide a platform to report suspicious activity.
+
+This project aims to create a safer digital environment for all Kenyans. Cyafe not only equips individuals with essential knowledge but also serves as a convenient training tool for organizations, fostering a more secure workplace culture. By bridging the cybersecurity awareness gap, Cyafe empowers communities, safeguards vulnerable populations, and contributes to the fight against online abuse.
 
 ## Features:
-The chatbot processes user input and attempts to find the most appropriate response based on pre-defined keywords.  
-Responses are provided from the [responses.json](responses.json) file, allowing easy customization of the bot's behavior.  
-The chatbot calculates the message probability for each response, considering the presence of recognized keywords and any required words specified for a response.  
-The chatbot includes an [other_responses.py](other_responses.py) module for handling generic responses.  
-The bot responds to common exit words like "bye" or "exit" to end the conversation.  
-The bot's responses stored in the responses.json can be modified from the [write_responses.py](write_responses.py) file.
+
+The chatbot processes user input and attempts to find the most appropriate response.
+Responses are provided by the OPENAI API specifically gpt-3.5 turbo.
 
 ## Usage:
-First, start the virtual environment with the command ```source venv/bin/activate```.
-Run the [main_file.py](main_file.py) script to start the bot with the command ```python main_file.py```.  
-Next go to your browser and type in the address http://127.0.0.1:5000  
-Click the 'open chatbot' button and type your message  
-![frontend](front.png)
-The chatbot will process your input and provide appropriate responses.  
-The administrator would have to run the write_responses.py file so they can modify the responses. The command is ```./write_responses.py```.
-![operation](screenshot.png)
+
+The bot is deployed on [this](https://chatbot-sz7q.onrender.com/)URL.
+
 ## Customization:
-To customize the chatbot's behavior, you can modify the responses.json file. It contains a list of responses, each associated with specific keywords and optional required words. You can add, modify, or delete responses to personalize the chatbot's replies from the write_responses.py script.  
 
+To customize the chatbot's behavior, you can modify this section in the app.py
+`def get_completion(prompt, model="gpt-3.5-turbo"):
+    initial_message = "Program the bot here"
+    messages = [{"role": "system", "content": initial_message}, {"role": "user", "content": prompt}]`
 
+## Authors
 
-> Note: This chatbot uses a simple rule-based approach and may not have sophisticated natural language understanding capabilities. It serves as a starting point for building more complex conversational AI applications.
-
-## Author
-injili (nyarekigospel@gmail.com)
+injili
+mwanyumba7
+Carlalagat
+Lenndadeborah
