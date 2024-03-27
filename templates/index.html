@@ -129,15 +129,21 @@
                     .scrollIntoView({ block: "start", behavior: "smooth" });
             });
         }
-
         document.getElementById("send").addEventListener("click", handleButtonClick);
+
         function handleButtonClick() {
-            getBotResponse();
+            const inputText = document.getElementById("textInput").value;
+            if (inputText.trim() !== "") {
+                getBotResponse();
+            }
         }
 
         $("#textInput").keypress(function (e) {
-            if (e.which == 13) {
-                getBotResponse();
+            if (e.which === 13) {
+                const inputText = document.getElementById("textInput").value;
+                if (inputText.trim() !== "") {
+                    getBotResponse();
+                }
             }
         });
     </script>
